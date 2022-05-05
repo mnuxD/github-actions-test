@@ -4,38 +4,38 @@ on:
   pull_request:
     branches: [main]
 
-  # jobs:
-  #   test:
-  #     runs-on: ubuntu-latest
-  #     steps:
-  #       - name: Clonar y ubicarse en la rama main
-  #         uses: actions/checkout@v2
-  #       - name: Instalar dependencias
-  #         run: npm install
-  #       - name: Ejecutar test
-  #         run: npm run test
+    # jobs:
+    #   test:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #       - name: Clonar y ubicarse en la rama main
+    #         uses: actions/checkout@v2
+    #       - name: Instalar dependencias
+    #         run: npm install
+    #       - name: Ejecutar test
+    #         run: npm run test
 
-  #   build:
-  #     runs-on: ubuntu-latest
-  #     needs: [test]
-  #     steps:
-  #       - name: Clonar y ubicarse en la rama main
-  #         uses: actions/checkout@v2
-  #       - name: Instalar dependencias
-  #         run: npm install
-  #       - name: Ejecutar test
-  #         run: npm run build
+    #   build:
+    #     runs-on: ubuntu-latest
+    #     needs: [test]
+    #     steps:
+    #       - name: Clonar y ubicarse en la rama main
+    #         uses: actions/checkout@v2
+    #       - name: Instalar dependencias
+    #         run: npm install
+    #       - name: Ejecutar test
+    #         run: npm run build
 
-  cd-surge:
-    runs-on: ubuntu-latest
-    # needs: [build]
-    steps:
-      - name: list pwd
-        run: pwd
-      - name: Deploy to test-front-baella01.surge.sh
-        uses: dswistowski/surge-sh-action@v1
-        with:
-          domain: "test-front-baella01.surge.sh"
-          project: "./front"
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+    cd-surge:
+      runs-on: ubuntu-latest
+      # needs: [build]
+      steps:
+        - name: list pwd
+          run: pwd
+        - name: Deploy to test-front-baella01.surge.sh
+          uses: dswistowski/surge-sh-action@v1
+          with:
+            domain: "test-front-baella01.surge.sh"
+            project: "./front"
+            login: ${{ secrets.surge_login }}
+            token: ${{ secrets.surge_token }}
