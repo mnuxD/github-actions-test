@@ -27,11 +27,13 @@ jobs:
   #       run: npm run build
 
   cd-surge:
+    name: Publish
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: front
     # needs: [build]
     steps:
-      - name: change directory
-        run: cd front
       - name: Deploy to test-front-baella01.surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
