@@ -13,7 +13,7 @@ jobs:
       - name: Instalar dependencias
         run: npm install
       - name: Ejecutar test
-        run: npm test
+        run: npm run test
 
   build:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
       - name: Instalar dependencias
         run: npm install
       - name: Ejecutar test
-        run: npm build
+        run: npm run build
 
   cd-surge:
     runs-on: ubuntu-latest
